@@ -1,0 +1,247 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Arial', sans-serif;
+  box-sizing: border-box; }
+
+ul li {
+  list-style-type: none; }
+
+main {
+  margin: 30px auto;
+  width: 700px;
+  position: relative; }
+
+header {
+  width: 100%;
+  height: 70px;
+  padding: 0 20px;
+  background-color: slateblue;
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+  align-items: center;
+  border-radius: 5px 5px 0 0; }
+  header .title h1 {
+    font-weight: lighter;
+    color: #fff;
+    font-size: 23px; }
+
+section {
+  background-color: #e1e1e1;
+  border-radius: 0 0 5px 5px;
+  overflow: hidden;
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+  position: relative; }
+  section .name-group {
+    width: 260px;
+    min-height: 400px;
+    display: -webkit-flex;
+    display: -ms-flex;
+    display: flex;
+    flex-direction: column;
+    background-color: #f1f1f1;
+    -webkit-box-shadow: 4px 0px 17px -1px rgba(0, 0, 0, 0.15);
+    -moz-box-shadow: 4px 0px 17px -1px rgba(0, 0, 0, 0.15);
+    box-shadow: 4px 0px 17px -1px rgba(0, 0, 0, 0.15); }
+    section .name-group .item {
+      padding: 16px 15px;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+      display: -webkit-flex;
+      display: -ms-flex;
+      display: flex;
+      align-items: center;
+      user-select: none;
+      cursor: pointer;
+      position: relative; }
+      section .name-group .item.active::after {
+        width: 100%; }
+      section .name-group .item::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 0;
+        height: 100%;
+        transition: all .25s ease;
+        background-color: rgba(0, 0, 0, 0.07); }
+      section .name-group .item:hover::after {
+        width: 100%; }
+      section .name-group .item .icon {
+        width: 30px;
+        text-align: center; }
+        section .name-group .item .icon .fa {
+          font-size: 18px;
+          color: #222; }
+      section .name-group .item span {
+        display: inline-block;
+        font-size: 18px;
+        margin-left: 16px;
+        color: #222; }
+
+section .task-list {
+  position: relative;
+  width: calc(100% - 260px);
+  padding: 8px; }
+  section .task-list .task {
+    background-color: #f1f1f1;
+    padding: 20px;
+    margin-bottom: 12px;
+    border-radius: 3px;
+    user-select: none;
+    box-shadow: 3px 0px 10px -1px rgba(0, 0, 0, 0.25);
+    position: relative; }
+    section .task-list .task:hover .item-close, section .task-list .task:hover .item-edit {
+      opacity: 1; }
+    section .task-list .task > div {
+      display: inline-block; }
+    section .task-list .task .item-close, section .task-list .task .item-edit {
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      display: -webkit-flex;
+      display: -ms-flex;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      right: 5px;
+      top: 5px;
+      opacity: 0;
+      transition: all .1s ease; }
+      section .task-list .task .item-close:hover .fa, section .task-list .task .item-edit:hover .fa {
+        margin-right: 5px; }
+      section .task-list .task .item-close .fa, section .task-list .task .item-edit .fa {
+        transition: all .15s ease;
+        cursor: pointer;
+        color: #333;
+        font-size: 19px; }
+    section .task-list .task .item-edit {
+      bottom: 5px;
+      top: auto; }
+      section .task-list .task .item-edit:hover .fa {
+        font-size: 18px;
+        margin-right: 7px; }
+      section .task-list .task .item-edit .fa {
+        font-size: 18px; }
+    section .task-list .task .item {
+      float: left;
+      width: 20px;
+      text-align: center;
+      cursor: pointer; }
+      section .task-list .task .item .fa {
+        font-size: 20px;
+        color: #222; }
+    section .task-list .task span {
+      display: inline-block;
+      margin-left: 10px;
+      font-size: 18px;
+      color: #222;
+      cursor: pointer; }
+      section .task-list .task span.active {
+        text-decoration: line-through; }
+
+.add-task {
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: deeppink;
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  overflow: hidden;
+  transition: all .15s ease; }
+  .add-task:hover {
+    bottom: 23px;
+    right: 23px;
+    width: 44px;
+    height: 44px; }
+  .add-task span {
+    color: #fff;
+    font-size: 25px; }
+
+form.add-wind, form.edit-wind {
+  position: absolute;
+  width: 220px;
+  padding: 15px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  z-index: 2;
+  border-radius: 3px;
+  -webkit-box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.25);
+  -moz-box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.25);
+  box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.25); }
+  form.add-wind.hide, form.edit-wind.hide {
+    display: none; }
+  form.add-wind label, form.edit-wind label {
+    position: relative; }
+    form.add-wind label span, form.edit-wind label span {
+      position: absolute;
+      font-size: 14px;
+      left: 0;
+      color: slateblue; }
+    form.add-wind label input[type="text"], form.edit-wind label input[type="text"] {
+      width: 100%;
+      margin-top: 20px;
+      padding: 3px 5px;
+      background-color: transparent;
+      color: #222;
+      border: 0;
+      border-bottom: 2px solid slateblue;
+      outline: none;
+      font-size: 15px; }
+  form.add-wind .button, form.edit-wind .button {
+    margin-top: 15px;
+    float: right; }
+    form.add-wind .button input, form.edit-wind .button input {
+      text-transform: uppercase;
+      color: #222;
+      font-size: 13px;
+      background-color: transparent;
+      border: 0;
+      font-weight: bold;
+      cursor: pointer;
+      outline: none; }
+      form.add-wind .button input:last-child, form.edit-wind .button input:last-child {
+        color: slateblue;
+        margin-left: 20px; }
+  form.add-wind .color-circle, form.edit-wind .color-circle {
+    width: 100%;
+    margin-top: 10px;
+    display: -webkit-flex;
+    display: -ms-flex;
+    display: flex;
+    align-items: center;
+    justify-content: space-between; }
+    form.add-wind .color-circle span, form.edit-wind .color-circle span {
+      display: block;
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      cursor: pointer; }
+      form.add-wind .color-circle span:active, form.edit-wind .color-circle span:active {
+        border: 1px solid #999; }
+
+form.edit-wind {
+  margin-left: -130px; }
+
+main.opacity::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 5px; }
+
+/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiIuL2Nzcy9zdHlsZXMuY3NzIiwic291cmNlUm9vdCI6IiJ9*/
