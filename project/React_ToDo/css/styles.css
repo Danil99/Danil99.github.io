@@ -316,10 +316,12 @@ header .menu {
     min-height: 350px; } }
 
 @media only screen and (max-width: 480px) {
-  header .title {
-    margin-left: 15px; }
-  header .menu {
-    display: block; }
+  header {
+    border-radius: 0; }
+    header .title {
+      margin-left: 15px; }
+    header .menu {
+      display: block; }
   main {
     margin: 0;
     min-height: 100vh; }
@@ -327,7 +329,7 @@ header .menu {
     width: 100%; }
   section .name-group {
     width: 180px;
-    height: 100vh;
+    min-height: calc(100vh - 60px);
     position: absolute;
     top: 0;
     left: -180px;
