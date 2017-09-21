@@ -171,11 +171,11 @@ form.add-wind, form.edit-wind {
   position: absolute;
   width: 220px;
   padding: 15px;
-  top: 50%;
+  top: 40%;
   left: 50%;
   transform: translate(-50%, -50%);
   background-color: #fff;
-  z-index: 2;
+  z-index: 10;
   border-radius: 3px;
   -webkit-box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.25);
   -moz-box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.25);
@@ -286,6 +286,10 @@ header .menu {
       transform: rotate(135deg); }
 
 @media only screen and (max-width: 768px) {
+  form.add-wind, form.edit-wind {
+    position: fixed;
+    margin: 0;
+    top: 50%; }
   main {
     width: auto;
     margin: 30px 20px; }
@@ -309,9 +313,7 @@ header .menu {
   section .name-group .item {
     padding: 15px; }
   section .name-group {
-    min-height: 350px; }
-  form.edit-wind {
-    margin-left: -30%; } }
+    min-height: 350px; } }
 
 @media only screen and (max-width: 480px) {
   header .title {
@@ -319,21 +321,26 @@ header .menu {
   header .menu {
     display: block; }
   section .name-group {
-    width: 180px; }
+    width: 180px;
+    height: 100vh; }
   main {
-    margin: 0; }
-  section .task-list {
-    width: 100%;
+    margin: 0;
     min-height: 100vh; }
+  section .task-list {
+    width: 100%; }
   section .name-group {
     position: absolute;
     height: 100%;
     top: 0;
     left: -180px;
     z-index: 5;
-    transition: all .25s ease; }
+    transition: all .25s ease;
+    box-shadow: none; }
     section .name-group.active {
-      left: 0; }
+      left: 0;
+      -webkit-box-shadow: 4px 0px 17px -1px rgba(0, 0, 0, 0.15);
+      -moz-box-shadow: 4px 0px 17px -1px rgba(0, 0, 0, 0.15);
+      box-shadow: 4px 0px 17px -1px rgba(0, 0, 0, 0.15); }
   section .task-list .task .item-close, section .task-list .task .item-edit {
     top: 50%;
     transform: translate(0, -50%); }
@@ -347,8 +354,11 @@ header .menu {
     width: 30px; }
   section .task-list .task .item-close .fa, section .task-list .task .item-edit .fa {
     font-size: 21px; }
-  form.edit-wind {
-    margin-left: 0;
-    top: 100px; } }
+  section {
+    border-radius: 0;
+    padding-bottom: 90px;
+    overflow: inherit; }
+  body {
+    background-color: #e1e1e1; } }
 
 /*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiIuL2Nzcy9zdHlsZXMuY3NzIiwic291cmNlUm9vdCI6IiJ9*/
