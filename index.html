@@ -10,21 +10,7 @@
 <body>
   <div id="root"></div>
 
-  <script>
-    window.onload = function() {
-      function addLink(hrefLink) {
-        var head = document.head || document.getElementsByTagName('head')[0],
-            link = document.createElement('link');
-        link.rel = 'stylesheet';
-        link.href = hrefLink;
-        head.appendChild(link);
-      }
-
-      addLink('./css/main.css');
-    }
-  </script>
-
-  <!-- <link rel="stylesheet" href="./css/main.css"> -->
+  <link rel="stylesheet" href="./css/main.css">
   <link rel="stylesheet" href="./css/styles.css">
   <script src="https://use.fontawesome.com/ecca90e41c.js"></script>
   <script src="bundle.js" defer></script>
