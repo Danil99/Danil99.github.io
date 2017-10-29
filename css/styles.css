@@ -77,12 +77,12 @@ section.content {
           height: auto; }
       section.content .work .items .item .text {
         margin-top: 3px; }
-        section.content .work .items .item .text a {
+        section.content .work .items .item .text > a {
           color: #fff;
           display: inline-block;
           font-size: 20px;
           transition: all .15s ease; }
-          section.content .work .items .item .text a:hover {
+          section.content .work .items .item .text > a:hover {
             padding-left: 10px;
             color: #40a3ff; }
 
@@ -90,6 +90,7 @@ section.content .work .items {
   justify-content: baseline;
   margin: 30px 10px 0; }
   section.content .work .items .item {
+    position: relative;
     margin: 0 20px; }
 
 section.content .work .items .item > a .view {
@@ -119,6 +120,20 @@ section.content .work .items .item > a:hover .view {
 
 section.content .work .items .item > a:hover .view h2 {
   opacity: 1; }
+
+section.content .work .items .item .text {
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+  align-items: center;
+  justify-content: space-between; }
+  section.content .work .items .item .text .github {
+    margin-right: 10px; }
+    section.content .work .items .item .text .github a {
+      color: #ccc;
+      transition: all .15s ease; }
+      section.content .work .items .item .text .github a:hover {
+        color: #aaa; }
 
 section.content .overview {
   margin-top: 30px;
