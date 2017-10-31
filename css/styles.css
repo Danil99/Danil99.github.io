@@ -213,6 +213,9 @@ section.content .overview p {
   margin-bottom: 5px;
   max-width: 900px; }
 
+section.content .work .items .item {
+  margin-bottom: 20px; }
+
 @media only screen and (max-width: 1400px) {
   section.side nav ul li a {
     font-size: 25px;
@@ -276,8 +279,6 @@ section.content .overview p {
     margin-top: 30px; }
   section.content {
     margin: 50px 30px; }
-  section.content .work .items .item {
-    flex: 1 190px; }
   section.content .work .items .item .text a {
     font-size: 18px; }
   .toggle-slide {
